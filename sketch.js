@@ -51,7 +51,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  packageSprite.x= packageBody.position.x 
+  packageSprite.x= helicopterSprite.position.x 
   packageSprite.y= packageBody.position.y 
   drawSprites();
 
@@ -59,7 +59,12 @@ function draw() {
   if(keyDown(DOWN_ARROW)) {
 	Matter.Body.setStatic(packageBody,false);
 	}	
-	
+	if(keyDown(LEFT_ARROW)){ 
+		helicopterSprite.velocityX=-4;
+	}
+	if(keyDown(RIGHT_ARROW)){ 
+		helicopterSprite.velocityX=4;
+	}
 	box1.display();
 	box2.display();
 	box3.display();
